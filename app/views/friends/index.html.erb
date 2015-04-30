@@ -1,0 +1,130 @@
+<%= javascript_include_tag "friends_sort.js" %>
+<div id="page-content" class="friends">
+  <div id="content-header">
+    <div class="container">
+      <h1 id="header">Friends (<%= @friends.length %>)</h1>
+    </div>
+  </div>
+<script>
+(function ($) {
+  // custom css expression for a case-insensitive contains()
+  jQuery.expr[':'].Contains = function(a,i,m){
+      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+  };
+
+
+  function listFilter(header, list, list1) { // header is any element, list is an unordered list
+    // create and add the filter form to the header
+    var form = $("<form>").attr({"class":"filterform","action":"#","id":"friends-search-form"}),
+        input = $("<input>").attr({"class":"filterinput","type":"text", "placeholder":"Search For Friends"});
+    $(form).append(input).appendTo(header);
+
+    $(input)
+      .change( function () {
+        var filter = $(this).val();
+        if(filter) {
+          // this finds all links in a list that contain the input,
+          // and hide the ones not containing the input while showing the ones that do
+          $(list).find("a .friend-name:not(:Contains(" + filter + "))").parent().parent().hide();
+          $(list).find("a .friend-name:Contains(" + filter + ")").parent().parent().show();
+          $(list1).find("a .friend-name:not(:Contains(" + filter + "))").parent().parent().hide();
+          $(list1).find("a .friend-name:Contains(" + filter + ")").parent().parent().show();
+
+        } else {
+          $(list).find("li").show();
+          $(list1).find("li").show();
+        }
+        return false;
+      })
+    .keyup( function () {
+        // fire the above change event after every letter
+        $(this).change();
+    });
+  }
+
+
+  //ondomready
+  $(function () {
+    listFilter($("#content-header .container"), $("#old_list"), $("#curr_list"));
+  });
+}(jQuery));
+  </script>
+
+<div class="container">
+  <h3 class="friends-list-header"><%= current_semester.name %> friends</h3>
+<% if @curr_friends.length > 0 then %>
+  <div id="sort-options">
+    sort by: 
+    <a id="sort-name">name</a>,
+    <a id="sort-mutual">mutual courses</a>, or
+    <a id="sort-free">free/not free</a>
+  </div>
+  <ul id="curr_list", class="friends-list">
+<% @curr_friends.each do |friend| %>
+    <li>
+      <a href="<%= user_path(friend) %>" class="friend-link">
+        <img class="friend-pic"
+             alt="<%= friend.name %>"
+             src="http://graph.facebook.com/<%= friend.uid %>/picture" />
+        <span class="friend-name"><%= friend.name %></span>
+        <span class="friend-mutual-courses"><% 
+        # mutual courses = intersection of two sets
+        if current_user.main_schedule && friend.main_schedule then
+          mutuals = friend.courses & current_user.courses
+        else
+          mutuals = []
+        end
+        # TODO on hover show actual courses
+         %><%= pluralize(mutuals.length, "mutual courses") %></span>
+        <span class="friend-status"><%= friend.status %></span>
+      </a>
+    </li><% 
+end 
+%>
+  </ul>
+<% if @curr_friends.length < 10 %>
+<script>
+$(function(){
+  $('#facebook-share-notify a').click(function(e) {
+        e.preventDefault();
+        FB.ui({ method:'feed',
+          name:"schedule+",
+          link:"http://scheduleplus.org/",
+          picture:'http://scheduleplus.org/images/schedule-plus-logo-square.jpg',
+          description:'schedule+ connects you to your Carnegie Mellon friends on Facebook by matching your planned course schedules. See which courses are most common among your friends, or find out which of your friends is free for a lunchtime get-together.',
+          message:"I'm now using schedule+ to share my CMU schedule with friends. Check it out!"
+        });
+        return false;
+  });
+});
+</script>
+<span id="facebook-share-notify">
+You have <%= @curr_friends.length %> friends currently using schedule+ this
+semester. <a>Share schedule+ on facebook</a> and invite your friends to join!
+</span>
+<% end %>
+<% else %>
+<% # TODO say something about inviting some friends to use schedule+ %>
+<% end %>
+  <h3 class="friends-list-header">Other friends on schedule+</h3>
+  <ul id = "old_list", class="friends-list"><% 
+@prev_friends.each do |friend| %>
+    <li>
+      <a href="<%= user_path(friend) %>" class="friend-link">
+        <img class="friend-pic"
+             alt="<%= friend.name %>"
+             src="http://graph.facebook.com/<%= friend.uid %>/picture" />
+        <span class="friend-name"><%= friend.name %></span>
+        <span class="last-seen">Last seen: <%=
+        begin
+          friend.schedules.primary.map(&:semester).last.name
+        rescue
+          "Never"
+        end
+        %></span>
+      </a>
+    </li><% 
+end %> 
+  </ul>
+  </div>
+</div>
