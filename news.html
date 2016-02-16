@@ -20,7 +20,7 @@
         ga('send', 'pageview');
     </script>
 
-    <title>Swu | About</title>
+    <title>Swu | News</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,6 +43,26 @@
 
 <body>
 
+<!--- INCLUDE FACEBOOK SDK -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '951929771542178',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
     <div class="brand">Swu</div>
     <!--    <div class="address-bar">5032 Forbes Ave | stephenwu95@gmail.com | 415.515.0535</div>   -->
 
@@ -58,7 +78,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.html">Swu</a>
+                <a class="navbar-brand" href="index.html" >SWU</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -86,29 +106,61 @@
     </nav>
 
     <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Swu gets featured in
+                        <strong>Carnegie Mellon's Newspaper</strong>
+                    </h2>
+                    <hr>
+                    <hr class="visible-xs">
+                    <img class="img-responsive img-border img-left" src="img/the-tartan.png" alt="">
+                    <p><a href="https://thetartan.org/" target="_blank">The Tartan</a> has been Carnegie Mellon University's official student-run newspaper since 1906. With a weekly broadsheet paper circulation of 6,000, The Tartan serves the campus community of 9,500 students as well as faculty, staff and administration.</p>
+                    <p>The Tartan features Swu in its latest article - giving a behind-the-scenes look into the inspirations and stories behind his new album. If you haven't had the chance, check it out <a href="https://thetartan.org/2016/2/8/pillbox/artist">here.</a> Many thanks to Joey Peiser and Abhishek Tayal from The Tartan for reaching out and interviewing to make this happen, and Varun Gadh from <a href="https://thebridge.cmu.edu/organization/IMO">IMO</a> for connecting us.</p>
+
+                    <p align="right">Feb 8, 2016</p>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">About
-                        <strong>Swu</strong>
+                    <h2 class="intro-text text-center">Swu wins "best lyrics" in <strong>Carnegie Mellon songwriting competition</strong>
                     </h2>
                     <hr>
+                    <img class="img-responsive img-border img-left" src="img/hack-a-song.png" alt="">
+                    <p>Hack-a-Song is a 10 hour musical competition in which teams of 3-5 musicians write, arrange, record, and perform original music! On this day, dozens of teams will compose, write, edit, record, and finally perform original songs spanning a variety of genres. Out of the two awards of the event, "best lyrics" was given to Swu and his teammates for what the judges referred to as "meaningful" and "tasteful" lyrics.</p>
+                    <p>A huge thanks to <a href="https://thebridge.cmu.edu/organization/IMO" target="_blank"> Independent Mucisians Organization (IMO) </a> for organizing and conducting the event. Shout out to Ari, Christine, and Maegha for being co-songwriters. Shout out to Kid Afabs and the crew for showing support.</p>
+                    <p align="right">Jan 16, 2016</p>
                 </div>
-                <div class="col-md-6">
-                    <img class="img-responsive img-border-left" src="img/slide-2.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">The teaser for Swu's newest album <strong>Human</strong> is released
+                    </h2>
+                    <hr>
+                    <div class="item active">
+                        <center><iframe width=100% height="550" src="https://www.youtube.com/embed/DbkYJLNUSwU" frameborder="0" allowfullscreen></iframe></center>
+                        <p align="right">Jan 14, 2016</p>
+                    </div>
                 </div>
-                <!-- Hailing from The Golden State - San Francisco, CA - comes Swu, one of the industry's most versatile recording artists and producers. Growing up and living all around the world, Swu embodies the creative and open-mindedness of different cultures. -->
-                <div class="col-md-6">
-                    <p>From The Golden State - San Francisco, CA - comes Swu, an up and coming singer and producer. Growing up and living all around the world, Swu embodies the creative and open-mindedness of different cultures. In his first album Human, he hopes bring to life emotions from the best parts of our lives to remind us that we are all human. He has stated that "music is a rare gift that crosses all language barriers and is universally understood. Each song captures an emotion and a story, and each story is from a part of my life." </p>
-                    <p>Swu's music career started in the 4th grade, when he won a songwriting competition. He used notation software to write an electronic beat, and didn't even know he incorperated advanced techniques such as polyrithms, sus7 chords, and stereo imaging. Since then, Swu has picked up a myriad of different instruments, from the baritone, to drums, to guitar, and to voice. These were the first stepping stones to a lifetime career in music.</p>
-                    <p>From his musical background and studying computer science at Carnegie Mellon, Swu is able to synthesize unique sounds and write avant garde chord and note progressions. He uses Nyquist to synthesize his own sounds, Carnegie Mellon's studio to record voice, and Logic Pro to put it all together. Throughout his musical career, he has been able to perform weekly sets at Iron Horse, a local bar and grill, perform in spring fairs, carnivals, and concert halls, and found an annual charity concert with the Boy Scouts of America. Now, he is focused on creating and producing his own music with the Carnegie Mellon School of Music, IMO, and independent artists.</p>
-                </div>
-                <div class="clearfix"></div>
             </div>
         </div>
         
+        <div class="col-lg-12 text-center">
+            <ul class="pager">
+                <li class="next"><a href="">Older &rarr;</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
     <!-- /.container -->
 
@@ -136,6 +188,7 @@
 
                         Copyright &copy; Swu 2016 </p>
                 </div>
+                
             </div>
         </div>
     </footer>
@@ -145,6 +198,13 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 
 </body>
 
