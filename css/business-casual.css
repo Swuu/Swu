@@ -193,3 +193,33 @@ footer p {
         clear: both;
     }
 }
+
+.pics {
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.pic4 {
+    position: relative;
+    float: left;
+    width: 25%;
+}
+
+.pic2 {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.big-pic {
+    padding-top: 1%;
+    max-height: 90%;
+    max-width: 100%;
+}
+
+.pic4:hover {
+    opacity: 0.5;
+}
+.pic2:hover {
+    opacity: 0.5;
+}
