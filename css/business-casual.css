@@ -206,6 +206,12 @@ footer p {
     width: 25%;
 }
 
+.pic3 {
+    position: relative;
+    float: left;
+    width: 33%;
+}
+
 .pic2 {
     position: relative;
     float: left;
@@ -218,7 +224,10 @@ footer p {
     max-width: 100%;
 }
 
-.pic4:hover {
+.pic4:hover{
+    opacity: 0.5;
+}
+.pic3:hover{
     opacity: 0.5;
 }
 .pic2:hover {
