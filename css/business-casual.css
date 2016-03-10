@@ -25,10 +25,19 @@ h6 {
     letter-spacing: 1px;
 }
 
+/* "New Album is Out Now Line" */
+h2 > p {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
 p {
     font-size: 1.25em;
     line-height: 1.6;
-    color: #000;
+    color: #5d5d5d;
 }
 
 hr {
@@ -111,7 +120,7 @@ footer {
 
 footer p {
     margin: 0;
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 @media screen and (min-width:768px) {
