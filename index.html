@@ -41,6 +41,16 @@
 
 </head>
 
+<!-- Facebok SDK for Like Button -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=951929771542178";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <body>
 
     <!-- Navigation -->
@@ -89,7 +99,16 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <img width="52%" src="img/swu-human-cover.jpg">
-                <h2><p>NEW ALBUM HUMAN OUT NOW</p></h2><br>
+                <h2><p>NEW ALBUM HUMAN OUT NOW</p></h2>
+
+                <p>
+                    <a href=""><img src="./img/getonitunes.png"></a>&nbsp
+
+                    <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:1vCWHaC5f2uS3yhpwWbIA6&size=basic&theme=light" width="200" height="25" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+
+                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                </p>
+                <br>
             </div>
         </div>
 
@@ -153,8 +172,6 @@
 
                         <!-- YOUTUBE LINK -->
                         <a target="_blank" title="follow me on youtube" href="https://www.youtube.com/channel/UCEDwKwLOQK3diDgbZYNso3g"><img alt="follow me on youtube" src="./img/youtube-icon.png" border=0></a>
-
-<!--<div class="fb-like" data-href="https://www.facebook.com/Swuofficial/?fref=ts" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>-->
 
                         <small>Copyright &copy; Swu 2016</small> </p>
                 </div>
